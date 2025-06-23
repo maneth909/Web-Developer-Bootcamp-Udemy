@@ -1,6 +1,18 @@
-const people = ["Scooby", "Velma", "Daphne", "Shaggy", "Fred"]; //DONT TOUCH THIS LINE!
+const base_url =
+  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
+const container = document.querySelector("#container");
 
-// WRITE YOUR LOOP BELOW THIS LINE:
-for (let i = 0; i < people.length; i++) {
-  console.log(people[i].toUpperCase());
+for (let i = 1; i <= 151; i++) {
+  const newCon = document.createElement("div");
+  newCon.setAttribute("class", "newCon");
+
+  const newImg = document.createElement("img");
+  newImg.setAttribute("src", `${base_url}${i}.png`);
+  newCon.appendChild(newImg);
+
+  const num = document.createElement("p");
+  num.innerText = `#${i}`;
+  newCon.appendChild(num);
+
+  container.appendChild(newCon);
 }
