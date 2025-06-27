@@ -1,18 +1,9 @@
-const base_url =
-  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
-const container = document.querySelector("#container");
+const h1 = document.querySelector("h1");
+const input = document.querySelector("#username");
 
-for (let i = 1; i <= 151; i++) {
-  const newCon = document.createElement("div");
-  newCon.setAttribute("class", "newCon");
-
-  const newImg = document.createElement("img");
-  newImg.setAttribute("src", `${base_url}${i}.png`);
-  newCon.appendChild(newImg);
-
-  const num = document.createElement("p");
-  num.innerText = `#${i}`;
-  newCon.appendChild(num);
-
-  container.appendChild(newCon);
-}
+input.addEventListener("input", function (e) {
+  h1.innerText = `Welcome, ${input.value}`;
+  if (!input.value) {
+    h1.innerText = "Enter Your Username";
+  }
+});
